@@ -1,0 +1,12 @@
+﻿<Page x:Class="BackupSystem.FtpConnectionList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:BackupSystem.ViewModel"
+        Height="300" Width="300">
+    <Page.DataContext>
+        <vm:FtpConnectionListViewModel />
+    </Page.DataContext>
+    <Grid>
+        <DataGrid ItemsSource="{Binding FtpConnectionList}"></DataGrid>
+    </Grid>
+</Page>

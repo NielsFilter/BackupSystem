@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BackupSystemModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BackupSystemEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="FtpConnections" EntityType="BackupSystemModel.FtpConnection" />
+  </EntityContainer>
+  <EntityType Name="FtpConnection">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="ConnectionName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Url" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="Username" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="LastConnectedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

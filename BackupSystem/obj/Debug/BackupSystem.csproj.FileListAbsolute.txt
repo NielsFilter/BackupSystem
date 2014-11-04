@@ -1,0 +1,50 @@
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\bin\Debug\BackupSystem.exe
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\bin\Debug\BackupSystem.pdb
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\bin\Debug\BackupSystem.Common.dll
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\bin\Debug\BackupSystem.DAL.dll
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\bin\Debug\EntityFramework.dll
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\bin\Debug\MahApps.Metro.dll
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\bin\Debug\BackupSystem.Common.pdb
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\bin\Debug\BackupSystem.DAL.pdb
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\bin\Debug\EntityFramework.xml
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\bin\Debug\MahApps.Metro.xml
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\BackupSystem.csprojResolveAssemblyReference.cache
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\MainWindow.baml
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\App.baml
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\Views\FtpConnectionList.g.cs
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\Views\FtpConnectionDetail.g.cs
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\MainWindow.g.cs
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\App.g.cs
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\BackupSystem_MarkupCompile.cache
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\BackupSystem_MarkupCompile.lref
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\Views\FtpConnectionList.baml
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\Views\FtpConnectionDetail.baml
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\BackupSystem.g.resources
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\BackupSystem.Properties.Resources.resources
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\BackupSystem.csproj.GenerateResource.Cache
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\BackupSystem.exe
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\obj\Debug\BackupSystem.pdb
+C:\Users\nfilter\documents\visual studio 2012\Projects\BackupSystem\BackupSystem\bin\Debug\BackupSystem.exe.config
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\bin\Debug\BackupSystem.exe.config
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\BackupSystem.exe
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\BackupSystem.pdb
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\BackupSystem.csprojResolveAssemblyReference.cache
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDictionaries\ButtonResources.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDictionaries\ColourResources.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDictionaries\GeneralResources.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDictionaries\StaticValueResources.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDictionaries\TextBlockResources.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDictionaries\VectorResources.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\MainWindow.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\App.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\FtpConnectionList.g.cs
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\FtpConnectionDetail.g.cs
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\MainWindow.g.cs
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\App.g.cs
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\BackupSystem_MarkupCompile.cache
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\BackupSystem_MarkupCompile.lref
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDictionaries\TextBoxResources.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDictionaries\ConverterResources.baml

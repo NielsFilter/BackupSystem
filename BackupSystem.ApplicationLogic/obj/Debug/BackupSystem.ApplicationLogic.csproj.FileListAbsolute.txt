@@ -1,0 +1,11 @@
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\bin\Debug\BackupSystem.ApplicationLogic.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\bin\Debug\BackupSystem.ApplicationLogic.pdb
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\bin\Debug\BackupSystem.Common.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\bin\Debug\BackupSystem.DAL.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\bin\Debug\EntityFramework.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\bin\Debug\BackupSystem.Common.pdb
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\bin\Debug\BackupSystem.DAL.pdb
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\bin\Debug\EntityFramework.xml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\obj\Debug\BackupSystem.ApplicationLogic.csprojResolveAssemblyReference.cache
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\obj\Debug\BackupSystem.ApplicationLogic.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\obj\Debug\BackupSystem.ApplicationLogic.pdb

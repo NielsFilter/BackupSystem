@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="BackupSystem.Controls.Wpf.Paging"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008">
+    <Viewbox x:Name="vbRoot" Height="40">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="4">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Margin" Value="4,0,4,0" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Margin" Value="4,0,4,0" />
+                    <Setter Property="Width" Value="40" />
+                </Style>
+            </StackPanel.Resources>
+            <Button Style="{DynamicResource BtnFirst}" Command="{Binding Path=Pager.GotoFirstPageCommand}" />
+            <Button Style="{DynamicResource BtnPrev}" Command="{Binding Path=Pager.GotoPreviousPageCommand}" />
+            <TextBlock Text="Page" FontFamily="Calibri" FontWeight="Bold" FontSize="26" Foreground="Black" />
+            <TextBlock Text="{Binding Pager.CurrentPage, ValidatesOnExceptions=True}" FontFamily="Calibri" FontWeight="Bold" FontSize="26" Foreground="Black" />
+            <TextBlock Text="{Binding Pager.PageCount, StringFormat=of {0}}" FontFamily="Calibri" FontWeight="Bold" FontSize="26" Foreground="Black" />
+            <Button Style="{DynamicResource BtnNext}" Command="{Binding Pager.GotoNextPageCommand}" />
+            <Button Style="{DynamicResource BtnLast}" Command="{Binding Pager.GotoLastPageCommand}" />
+        </StackPanel>
+    </Viewbox>
+</UserControl>

@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace BackupSystem.Common.Enums
+{
+    public class EnumDisplay<T>
+    {
+        #region Constructors
+
+        public EnumDisplay(T value)
+        {
+            this.Value = value;
+            this.Display = EnumHelper.GetEnumDisplayName((Enum)(object)value);
+        }
+
+        #endregion
+
+        #region Properties
+
+        public T Value { get; set; }
+        public string Display { get; set; }
+
+        #endregion
+
+        #region Overrides
+
+        public override string ToString()
+        {
+            return this.Display;
+        }
+
+        #endregion
+    }
+}
