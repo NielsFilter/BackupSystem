@@ -1,4 +1,5 @@
-﻿using BackupSystem.ApplicationLogic.ViewModels.Base;
+﻿using BackupSystem.ApplicationLogic.ViewModels.Backup;
+using BackupSystem.ApplicationLogic.ViewModels.Base;
 using BackupSystem.ApplicationLogic.ViewModels.Core;
 using BackupSystem.ApplicationLogic.ViewModels.Tools;
 using BackupSystem.Common.Mvvm.Commands;
@@ -62,6 +63,7 @@ namespace BackupSystem.ApplicationLogic.ViewModels
         public override void OnLoad()
         {
             base.OnLoad();
+            base.Context.MasterViewModel = this;
 
             if (SessionContext.Current.LoggedInUser == null)
             {
@@ -114,6 +116,11 @@ namespace BackupSystem.ApplicationLogic.ViewModels
         public void GoLicenseActivate()
         {
             base.Navigate(new UserActivationViewModel());
+        }
+
+        public void GoCreateBackup()
+        {
+            base.Navigate(new CreateBackupViewModel());
         }
 
         #endregion

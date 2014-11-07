@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BackupSystem.Common.Utils;
 
 namespace BackupSystem.UI.Wpf.Views
 {
@@ -24,11 +25,11 @@ namespace BackupSystem.UI.Wpf.Views
         {
             get
             {
-                if (this.DataContext == null)
+                if (this.DataContext == null || !(this.DataContext is ShellViewModel))
                 {
                     return null;
                 }
-                return this.DataContext as ShellViewModel;
+                return (ShellViewModel)this.DataContext;
             }
         }
 
@@ -43,16 +44,30 @@ namespace BackupSystem.UI.Wpf.Views
             this.ViewModel.OnLoad();
         }
 
-        #region Menu 
+        #region Menu
 
         private void ShowMenu_Click(object sender, RoutedEventArgs e)
         {
             this.ViewModel.ShowMenu();
         }
 
+        #endregion
+
+        #region Navigation
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            this.ViewModel.GoHome();
+        }
+
         private void GoToActivation_Click(object sender, RoutedEventArgs e)
         {
             this.ViewModel.GoLicenseActivate();
+        }
+
+        private void CreateBackup_Click(object sender, RoutedEventArgs e)
+        {
+            this.ViewModel.GoCreateBackup();
         }
 
         #endregion

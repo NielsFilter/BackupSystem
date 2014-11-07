@@ -7,7 +7,7 @@ namespace System.Linq
 {
     public static class LINQExtensions
     {
-        public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> enumerable)
+        public static ObservableCollection<T> AsObservableCollection<T>(this IEnumerable<T> enumerable)
         {
             if (enumerable == null)
             {

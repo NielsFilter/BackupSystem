@@ -1,17 +1,262 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="BackupSystemModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="BackupSystemModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="BackupSystemModelStoreContainer">
-    <EntitySet Name="FtpConnection" EntityType="BackupSystemModel.Store.FtpConnection" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="ActiveLicense" EntityType="BackupSystemModel.Store.ActiveLicense" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BackupItem" EntityType="BackupSystemModel.Store.BackupItem" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BackupItemFileSystem" EntityType="BackupSystemModel.Store.BackupItemFileSystem" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BackupItemFTP" EntityType="BackupSystemModel.Store.BackupItemFTP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Job" EntityType="BackupSystemModel.Store.Job" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobAdHoc" EntityType="BackupSystemModel.Store.JobAdHoc" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobAdHocDates" EntityType="BackupSystemModel.Store.JobAdHocDates" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobBackupItems" EntityType="BackupSystemModel.Store.JobBackupItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobScheduled" EntityType="BackupSystemModel.Store.JobScheduled" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobScheduledExceptionDates" EntityType="BackupSystemModel.Store.JobScheduledExceptionDates" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="License" EntityType="BackupSystemModel.Store.License" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemSetting" EntityType="BackupSystemModel.Store.SystemSetting" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="BackupSystemModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_BackupItemFileSystem_BackupItem" Association="BackupSystemModel.Store.FK_BackupItemFileSystem_BackupItem">
+      <End Role="BackupItem" EntitySet="BackupItem" />
+      <End Role="BackupItemFileSystem" EntitySet="BackupItemFileSystem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BackupItemFTP_BackupItem" Association="BackupSystemModel.Store.FK_BackupItemFTP_BackupItem">
+      <End Role="BackupItem" EntitySet="BackupItem" />
+      <End Role="BackupItemFTP" EntitySet="BackupItemFTP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobAdHoc_Job" Association="BackupSystemModel.Store.FK_JobAdHoc_Job">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="JobAdHoc" EntitySet="JobAdHoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobAdHocDates_JobAdHoc" Association="BackupSystemModel.Store.FK_JobAdHocDates_JobAdHoc">
+      <End Role="JobAdHoc" EntitySet="JobAdHoc" />
+      <End Role="JobAdHocDates" EntitySet="JobAdHocDates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobBackupItems_BackupItem" Association="BackupSystemModel.Store.FK_JobBackupItems_BackupItem">
+      <End Role="BackupItem" EntitySet="BackupItem" />
+      <End Role="JobBackupItems" EntitySet="JobBackupItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobBackupItems_Job1" Association="BackupSystemModel.Store.FK_JobBackupItems_Job1">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="JobBackupItems" EntitySet="JobBackupItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobScheduled_Job" Association="BackupSystemModel.Store.FK_JobScheduled_Job">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="JobScheduled" EntitySet="JobScheduled" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobScheduledExceptionDates_JobScheduled" Association="BackupSystemModel.Store.FK_JobScheduledExceptionDates_JobScheduled">
+      <End Role="JobScheduled" EntitySet="JobScheduled" />
+      <End Role="JobScheduledExceptionDates" EntitySet="JobScheduledExceptionDates" />
+    </AssociationSet>
   </EntityContainer>
-  <EntityType Name="FtpConnection">
+  <EntityType Name="ActiveLicense">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="ConnectionName" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="Url" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="AppliedDate" Type="datetime" Nullable="false" />
+    <Property Name="Code" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BackupItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BackupTypeCode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDefault" Type="bit" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BackupItemFileSystem">
+    <Key>
+      <PropertyRef Name="BackupItemID" />
+    </Key>
+    <Property Name="BackupItemID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BackupTypeCode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="BackupItemFTP">
+    <Key>
+      <PropertyRef Name="BackupItemID" />
+    </Key>
+    <Property Name="BackupItemID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BackupTypeCode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" MaxLength="1000" />
     <Property Name="Username" Type="nvarchar" MaxLength="255" />
     <Property Name="Password" Type="nvarchar" MaxLength="255" />
-    <Property Name="LastConnectedDate" Type="datetime" />
   </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="ScheduleType" Type="varchar" MaxLength="10" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobAdHoc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobAdHocDates">
+    <Key>
+      <PropertyRef Name="JobAdHocID" />
+      <PropertyRef Name="ScheduledDateTime" />
+    </Key>
+    <Property Name="JobAdHocID" Type="bigint" Nullable="false" />
+    <Property Name="ScheduledDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobBackupItems">
+    <Key>
+      <PropertyRef Name="JobID" />
+      <PropertyRef Name="BackupItemID" />
+    </Key>
+    <Property Name="JobID" Type="bigint" Nullable="false" />
+    <Property Name="BackupItemID" Type="bigint" Nullable="false" />
+    <Property Name="BackupTypeCode" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="JobScheduled">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="JobID" Type="bigint" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="Period" Type="decimal" Nullable="false" />
+    <Property Name="PeriodType" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="JobScheduledExceptionDates">
+    <Key>
+      <PropertyRef Name="JobScheduledID" />
+      <PropertyRef Name="ExceptionDateTime" />
+    </Key>
+    <Property Name="JobScheduledID" Type="bigint" Nullable="false" />
+    <Property Name="ExceptionDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="License">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SystemSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Setting" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Value" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BackupItemFileSystem_BackupItem">
+    <End Role="BackupItem" Type="BackupSystemModel.Store.BackupItem" Multiplicity="1" />
+    <End Role="BackupItemFileSystem" Type="BackupSystemModel.Store.BackupItemFileSystem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BackupItem">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BackupItemFileSystem">
+        <PropertyRef Name="BackupItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BackupItemFTP_BackupItem">
+    <End Role="BackupItem" Type="BackupSystemModel.Store.BackupItem" Multiplicity="1" />
+    <End Role="BackupItemFTP" Type="BackupSystemModel.Store.BackupItemFTP" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BackupItem">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BackupItemFTP">
+        <PropertyRef Name="BackupItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobAdHoc_Job">
+    <End Role="Job" Type="BackupSystemModel.Store.Job" Multiplicity="1" />
+    <End Role="JobAdHoc" Type="BackupSystemModel.Store.JobAdHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobAdHoc">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobAdHocDates_JobAdHoc">
+    <End Role="JobAdHoc" Type="BackupSystemModel.Store.JobAdHoc" Multiplicity="1" />
+    <End Role="JobAdHocDates" Type="BackupSystemModel.Store.JobAdHocDates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobAdHoc">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobAdHocDates">
+        <PropertyRef Name="JobAdHocID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobBackupItems_BackupItem">
+    <End Role="BackupItem" Type="BackupSystemModel.Store.BackupItem" Multiplicity="1" />
+    <End Role="JobBackupItems" Type="BackupSystemModel.Store.JobBackupItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BackupItem">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobBackupItems">
+        <PropertyRef Name="BackupItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobBackupItems_Job1">
+    <End Role="Job" Type="BackupSystemModel.Store.Job" Multiplicity="1" />
+    <End Role="JobBackupItems" Type="BackupSystemModel.Store.JobBackupItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobBackupItems">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobScheduled_Job">
+    <End Role="Job" Type="BackupSystemModel.Store.Job" Multiplicity="1" />
+    <End Role="JobScheduled" Type="BackupSystemModel.Store.JobScheduled" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobScheduled">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobScheduledExceptionDates_JobScheduled">
+    <End Role="JobScheduled" Type="BackupSystemModel.Store.JobScheduled" Multiplicity="1" />
+    <End Role="JobScheduledExceptionDates" Type="BackupSystemModel.Store.JobScheduledExceptionDates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobScheduled">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JobScheduledExceptionDates">
+        <PropertyRef Name="JobScheduledID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

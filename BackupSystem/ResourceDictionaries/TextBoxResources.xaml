@@ -8,6 +8,10 @@
         <Setter Property="m:TextboxHelper.ClearTextButton" Value="True"/>
     </Style>
 
+    <Style x:Key="TxtStrong" TargetType="TextBox" BasedOn="{StaticResource TxtDefault}">
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+
     <Style x:Key="PwdDeafult" TargetType="PasswordBox" BasedOn="{StaticResource MetroPasswordBox}">
         <Setter Property="Margin" Value="10" />
         <Setter Property="m:TextboxHelper.ClearTextButton" Value="True"/>

@@ -1,5 +1,6 @@
 ﻿using BackupSystem.Common.Enums;
 using BackupSystem.Common.Mvvm.ViewModels;
+using BackupSystem.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,11 +27,11 @@ namespace BackupSystem.ApplicationLogic
 
         #endregion
 
-        public virtual string LoggedInUser { get; set; }
+        public virtual User LoggedInUser { get; set; }
 
         #region Navigate
 
-        public abstract ViewModelBase CurrentViewModel { get; protected set; }
+        public virtual ViewModelBase MasterViewModel { get; set; }
 
         public abstract void Navigate(ViewModelBase viewModel);
 

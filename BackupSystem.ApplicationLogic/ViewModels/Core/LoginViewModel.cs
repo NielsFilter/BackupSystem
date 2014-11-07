@@ -1,6 +1,8 @@
 ﻿using BackupSystem.ApplicationLogic.ViewModels.Base;
 using BackupSystem.Common.Mvvm.ViewModels;
 using BackupSystem.DAL;
+using BackupSystem.Domain;
+using BackupSystem.Domain.IServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,11 +13,14 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Core
 {
     public class LoginViewModel : PageViewModel
     {
+        private IUserService _userService;
+
         #region Constructors
 
         public LoginViewModel()
             : base()
         {
+            this._userService = ServiceFactory.GetService<IUserService>();
         }
 
         #endregion
@@ -106,26 +111,19 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Core
             // Validate all fields
             validate(null);
 
-            //base.ShowLoading(() =>
-            //    {
-            //        bool validLogin = false;
-            //        using (BackupSystemEntities ctx = new BackupSystemEntities())
-            //        {
-            //            var user = ctx.Users.FirstOrDefault(u => u.Username == this.Username);
-            //            if (user != null)
-            //            {
-            //                validLogin = user.ValidatePassword(this.Password);
-            //                if (validLogin)
-            //                {
-            //                    SessionContext.Current.LoggedInUser = user;
-            //                    base.ChangeViewModel(new BestFitCalculatorViewModel());
-            //                    return;
-            //                }
-            //            }
-            //        }
+            base.ShowLoading(() =>
+                {
+                    var user = this._userService.LoginUser(this.Username, this.Password);
+                    if (user != null)
+                    {
+                        SessionContext.Current.LoggedInUser = user;
+                        base.Navigate(new HomeViewModel());
+                        return;
+                    }
 
-            //        this.DialogService.ShowMessageBox(this, "Invalid username or password", "Login failed", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
-            //    }, "Logging in...");
+                    // TODO: SHOW MESSAGE
+                    // this.DialogService.ShowMessageBox(this, "Invalid username or password", "Login failed", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                }, "Logging in...");
         }
 
         #endregion

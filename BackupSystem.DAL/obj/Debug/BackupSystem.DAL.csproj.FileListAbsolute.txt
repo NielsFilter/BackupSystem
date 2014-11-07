@@ -13,3 +13,6 @@ C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.DAL\bin\Debug\Entity
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.DAL\bin\Debug\EntityFramework.xml
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.DAL\obj\Debug\BackupSystem.DAL.dll
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.DAL\obj\Debug\BackupSystem.DAL.pdb
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.DAL\obj\Debug\BackupSystem.DAL.csprojResolveAssemblyReference.cache
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.DAL\bin\Debug\BackupSystem.Common.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.DAL\bin\Debug\BackupSystem.Common.pdb

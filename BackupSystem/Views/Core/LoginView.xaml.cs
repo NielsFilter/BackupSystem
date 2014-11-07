@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls;
+﻿using BackupSystem.ApplicationLogic.ViewModels.Core;
+using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +20,30 @@ namespace BackupSystem.UI.Wpf.Views.Core
     /// </summary>
     public partial class LoginView : UserControl
     {
+        #region VM
+
+        private LoginViewModel ViewModel
+        {
+            get
+            {
+                if (this.DataContext == null || !(this.DataContext is LoginViewModel))
+                {
+                    return null;
+                }
+                return (LoginViewModel)this.DataContext;
+            }
+        }
+
+        #endregion
+
         public LoginView()
         {
             InitializeComponent();
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            this.ViewModel.Login();
         }
     }
 }

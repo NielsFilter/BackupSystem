@@ -4,8 +4,28 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a563e7128eb1483bba638330ae362e2a" Name="Diagram1">
-        <EntityTypeShape EntityType="BackupSystemModel.FtpConnection" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="a563e7128eb1483bba638330ae362e2a" Name="Diagram1" ZoomLevel="56">
+        <EntityTypeShape EntityType="BackupSystemModel.BackupItem" Width="1.5" PointX="5" PointY="8.75" />
+        <EntityTypeShape EntityType="BackupSystemModel.BackupItemFileSystem" Width="1.5" PointX="2.75" PointY="12.875" />
+        <EntityTypeShape EntityType="BackupSystemModel.BackupItemFTP" Width="1.5" PointX="7" PointY="12.875" />
+        <EntityTypeShape EntityType="BackupSystemModel.Job" Width="1.5" PointX="12" PointY="8.75" />
+        <EntityTypeShape EntityType="BackupSystemModel.JobAdHoc" Width="1.5" PointX="16" PointY="8.125" />
+        <EntityTypeShape EntityType="BackupSystemModel.JobAdHocDate" Width="1.5" PointX="19.25" PointY="8.125" />
+        <EntityTypeShape EntityType="BackupSystemModel.JobBackupItem" Width="1.5" PointX="8.625" PointY="9.25" />
+        <EntityTypeShape EntityType="BackupSystemModel.JobScheduled" Width="1.5" PointX="16.125" PointY="10.5" />
+        <EntityTypeShape EntityType="BackupSystemModel.JobScheduledExceptionDate" Width="1.5" PointX="19.25" PointY="11" />
+        <AssociationConnector Association="BackupSystemModel.FK_BackupItemFileSystem_BackupItem" />
+        <AssociationConnector Association="BackupSystemModel.FK_BackupItemFTP_BackupItem" />
+        <AssociationConnector Association="BackupSystemModel.FK_JobBackupItems_BackupItem" />
+        <AssociationConnector Association="BackupSystemModel.FK_JobAdHoc_Job" />
+        <AssociationConnector Association="BackupSystemModel.FK_JobBackupItems_Job1" />
+        <AssociationConnector Association="BackupSystemModel.FK_JobScheduled_Job" ></AssociationConnector>
+        <AssociationConnector Association="BackupSystemModel.FK_JobAdHocDates_JobAdHoc" />
+        <AssociationConnector Association="BackupSystemModel.FK_JobScheduledExceptionDates_JobScheduled" />
+        <EntityTypeShape EntityType="BackupSystemModel.ActiveLicense" Width="1.5" PointX="8.625" PointY="5.25" />
+        <EntityTypeShape EntityType="BackupSystemModel.License" Width="1.5" PointX="10.5" PointY="5.25" />
+        <EntityTypeShape EntityType="BackupSystemModel.SystemSetting" Width="1.5" PointX="12.375" PointY="5.125" />
+        <EntityTypeShape EntityType="BackupSystemModel.User" Width="1.5" PointX="14.375" PointY="5.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,15 +1,129 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="BackupSystemModelStoreContainer" CdmEntityContainer="BackupSystemEntities">
-    <EntitySetMapping Name="FtpConnections">
-      <EntityTypeMapping TypeName="BackupSystemModel.FtpConnection">
-        <MappingFragment StoreEntitySet="FtpConnection">
+    <EntitySetMapping Name="BackupItems">
+      <EntityTypeMapping TypeName="BackupSystemModel.BackupItem">
+        <MappingFragment StoreEntitySet="BackupItem">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BackupTypeCode" ColumnName="BackupTypeCode" />
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ConnectionName" ColumnName="ConnectionName" />
-          <ScalarProperty Name="Url" ColumnName="Url" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BackupItemFileSystems">
+      <EntityTypeMapping TypeName="BackupSystemModel.BackupItemFileSystem">
+        <MappingFragment StoreEntitySet="BackupItemFileSystem">
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="BackupTypeCode" ColumnName="BackupTypeCode" />
+          <ScalarProperty Name="BackupItemID" ColumnName="BackupItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BackupItemFTPs">
+      <EntityTypeMapping TypeName="BackupSystemModel.BackupItemFTP">
+        <MappingFragment StoreEntitySet="BackupItemFTP">
           <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="LastConnectedDate" ColumnName="LastConnectedDate" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="BackupTypeCode" ColumnName="BackupTypeCode" />
+          <ScalarProperty Name="BackupItemID" ColumnName="BackupItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="BackupSystemModel.Job">
+        <MappingFragment StoreEntitySet="Job">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ScheduleType" ColumnName="ScheduleType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobAdHocs">
+      <EntityTypeMapping TypeName="BackupSystemModel.JobAdHoc">
+        <MappingFragment StoreEntitySet="JobAdHoc">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobAdHocDates">
+      <EntityTypeMapping TypeName="BackupSystemModel.JobAdHocDate">
+        <MappingFragment StoreEntitySet="JobAdHocDates">
+          <ScalarProperty Name="ScheduledDateTime" ColumnName="ScheduledDateTime" />
+          <ScalarProperty Name="JobAdHocID" ColumnName="JobAdHocID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobBackupItems">
+      <EntityTypeMapping TypeName="BackupSystemModel.JobBackupItem">
+        <MappingFragment StoreEntitySet="JobBackupItems">
+          <ScalarProperty Name="BackupTypeCode" ColumnName="BackupTypeCode" />
+          <ScalarProperty Name="BackupItemID" ColumnName="BackupItemID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobScheduleds">
+      <EntityTypeMapping TypeName="BackupSystemModel.JobScheduled">
+        <MappingFragment StoreEntitySet="JobScheduled">
+          <ScalarProperty Name="PeriodType" ColumnName="PeriodType" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobScheduledExceptionDates">
+      <EntityTypeMapping TypeName="BackupSystemModel.JobScheduledExceptionDate">
+        <MappingFragment StoreEntitySet="JobScheduledExceptionDates">
+          <ScalarProperty Name="ExceptionDateTime" ColumnName="ExceptionDateTime" />
+          <ScalarProperty Name="JobScheduledID" ColumnName="JobScheduledID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActiveLicenses">
+      <EntityTypeMapping TypeName="BackupSystemModel.ActiveLicense">
+        <MappingFragment StoreEntitySet="ActiveLicense">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="AppliedDate" ColumnName="AppliedDate" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Licenses">
+      <EntityTypeMapping TypeName="BackupSystemModel.License">
+        <MappingFragment StoreEntitySet="License">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemSettings">
+      <EntityTypeMapping TypeName="BackupSystemModel.SystemSetting">
+        <MappingFragment StoreEntitySet="SystemSetting">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Setting" ColumnName="Setting" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="BackupSystemModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

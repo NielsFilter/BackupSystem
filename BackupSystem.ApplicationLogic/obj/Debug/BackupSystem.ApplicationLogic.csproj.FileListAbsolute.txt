@@ -9,3 +9,5 @@ C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\bin
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\obj\Debug\BackupSystem.ApplicationLogic.csprojResolveAssemblyReference.cache
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\obj\Debug\BackupSystem.ApplicationLogic.dll
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\obj\Debug\BackupSystem.ApplicationLogic.pdb
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\bin\Debug\BackupSystem.Domain.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.ApplicationLogic\bin\Debug\BackupSystem.Domain.pdb

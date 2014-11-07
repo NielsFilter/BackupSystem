@@ -75,6 +75,7 @@
     <Compile Include="Paging\PagingViewModel.cs" />
     <Compile Include="Utils\Encryption.cs" />
     <Compile Include="Utils\LINQExtensions.cs" />
+    <Compile Include="Utils\ReflectionHelper.cs" />
     <Compile Include="Utils\XML.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

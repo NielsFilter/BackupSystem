@@ -9,9 +9,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using BackupSystem.Common.Mvvm.Converters;
-using BackupSystem.Controls.Wpf.AttachedProperties;
-using MahApps.Metro.Controls;
 using System;
 using System.Diagnostics;
 using System.Windows;

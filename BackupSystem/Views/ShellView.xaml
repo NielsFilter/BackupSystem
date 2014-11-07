@@ -7,8 +7,7 @@
         xmlns:local="clr-namespace:BackupSystem.UI.Wpf"
         WindowState="Maximized"
         Title="Backup System" Height="768" Width="1024"
-        IsEnabled="{Binding IsEnabled}"
-               Loaded="Window_Loaded">
+        Loaded="Window_Loaded">
 
     <Window.DataContext>
         <vm:ShellViewModel />
@@ -47,7 +46,7 @@
             <TextBlock Text="Backup System" Style="{StaticResource TbHeading}" VerticalAlignment="Top" />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1"
                         Visibility="{Binding Context.LoggedInUser, Mode=OneWay, Converter={StaticResource hasValueToVisibilityConverter}}" >
-                <Button Style="{DynamicResource BtnHome}" ToolTip="Go to Home Page" Command="{Binding HomeCommand}"/>
+                <Button Style="{DynamicResource BtnHome}" ToolTip="Go to Home Page" Click="Home_Click"/>
                 <Button Style="{StaticResource BtnMenu}" ToolTip="Open Menu" Visibility="{Binding IsMenuVisible, Mode=TwoWay, Converter={StaticResource boolToVisibilityConverter}, ConverterParameter=True}" Click="ShowMenu_Click" />
             </StackPanel>
         </Grid>
@@ -60,10 +59,7 @@
         <!--<Border Grid.Row="2" />-->
 
         <!-- Content - Pages are loaded into this content control -->
-        <TextBlock Text="{Binding Path=Context.CurrentViewModel}" />
-        <m:TransitioningContentControl x:Name="contentMain" Grid.Row="1" Grid.RowSpan="3"
-                                       Content="{Binding Path=Context.CurrentViewModel, Mode=TwoWay, NotifyOnTargetUpdated=True}"
-                                       Transition="RightReplace" />
+        <m:TransitioningContentControl x:Name="contentMain" Grid.Row="1" Grid.RowSpan="3" Transition="RightReplace" />
 
 
 
@@ -93,7 +89,8 @@
                         <!-- User Module -->
                         <TextBlock Text="User Module" Foreground="Beige" />
                         <Button Content="System users" />
-                        <Button Click="GoToActivation_Click" Content="Generate Activation key" />
+                        <Button Content="Generate Activation key" Click="GoToActivation_Click" />
+                        <Button Content="Create Backup" Click="CreateBackup_Click" />
                     </StackPanel>
 
                 </m:Flyout>

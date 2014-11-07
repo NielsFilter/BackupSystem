@@ -1,7 +1,9 @@
 ﻿using BackupSystem.ApplicationLogic;
+using BackupSystem.ApplicationLogic.ViewModels.Backup;
 using BackupSystem.ApplicationLogic.ViewModels.Core;
 using BackupSystem.Common.Mvvm.ViewModels;
 using BackupSystem.UI.Wpf.Core;
+using BackupSystem.UI.Wpf.Views.Backup;
 using BackupSystem.UI.Wpf.Views.Core;
 using System;
 using System.Collections.Generic;
@@ -39,10 +41,15 @@ namespace BackupSystem.UI.Wpf
                 {
                     this._pageLookup = new Dictionary<Type, Type>();
 
+                    // Core
                     this._pageLookup.Add(typeof(HomeViewModel), typeof(HomeView));
                     this._pageLookup.Add(typeof(LoginViewModel), typeof(LoginView));
                     this._pageLookup.Add(typeof(UserActivationViewModel), typeof(UserActivation));
+                    this._pageLookup.Add(typeof(UserListViewModel), typeof(UserListView));
+                    this._pageLookup.Add(typeof(UserDetailViewModel), typeof(UserDetailView));
 
+                    // Backup
+                    this._pageLookup.Add(typeof(CreateBackupViewModel), typeof(CreateBackupView));
                 }
                 return this._pageLookup;
             }
@@ -51,20 +58,6 @@ namespace BackupSystem.UI.Wpf
         #region Navigate
 
         internal ContentControl MainContent { get; set; }
-
-        private ViewModelBase _currentVM = null;
-        public override ViewModelBase CurrentViewModel
-        {
-            get { return _currentVM; }
-            protected set
-            {
-                if (_currentVM != value)
-                {
-                    _currentVM = value;
-                    base.NotifyPropertyChanged("CurrentViewModel");
-                }
-            }
-        }
 
         public override void Navigate(ViewModelBase viewModel)
         {
@@ -79,7 +72,7 @@ namespace BackupSystem.UI.Wpf
                 FrameworkElement pg = Activator.CreateInstance(pageType) as FrameworkElement;
                 if (pg != null)
                 {
-                    this.CurrentViewModel = viewModel;
+                    this.MainContent.Content = pg;
                     pg.DataContext = viewModel;
                 }
             }

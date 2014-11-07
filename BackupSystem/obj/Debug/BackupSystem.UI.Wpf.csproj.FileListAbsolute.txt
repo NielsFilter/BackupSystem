@@ -24,15 +24,10 @@ C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDi
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\Core\HomeView.baml
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\App.baml
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\Core\HomeView.g.cs
-C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\FtpConnectionList.g.cs
-C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\FtpConnectionDetail.g.cs
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\ShellView.g.cs
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\App.g.cs
-C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\BackupSystem.UI.Wpf_MarkupCompile.cache
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\BackupSystem.UI.Wpf_MarkupCompile.lref
-C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\FtpConnectionList.baml
-C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\FtpConnectionDetail.baml
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\ShellView.baml
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\BackupSystem.UI.Wpf.g.resources
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\BackupSystem.UI.Wpf.Properties.Resources.resources
@@ -45,3 +40,11 @@ C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\Core
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\Core\LoginView.g.cs
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\bin\Debug\BackupSystem.Controls.Wpf.dll
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\bin\Debug\BackupSystem.Controls.Wpf.pdb
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\bin\Debug\BackupSystem.Domain.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\bin\Debug\BackupSystem.Domain.pdb
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\Core\UserDetailView.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\Core\UserDetailView.g.cs
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\Core\UserListView.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\Core\UserListView.g.cs
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\Backup\CreateBackupView.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\Backup\CreateBackupView.g.cs

@@ -25,6 +25,18 @@ namespace BackupSystem.DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<FtpConnection> FtpConnections { get; set; }
+        public DbSet<BackupItem> BackupItems { get; set; }
+        public DbSet<BackupItemFileSystem> BackupItemFileSystems { get; set; }
+        public DbSet<BackupItemFTP> BackupItemFTPs { get; set; }
+        public DbSet<Job> Jobs { get; set; }
+        public DbSet<JobAdHoc> JobAdHocs { get; set; }
+        public DbSet<JobAdHocDate> JobAdHocDates { get; set; }
+        public DbSet<JobBackupItem> JobBackupItems { get; set; }
+        public DbSet<JobScheduled> JobScheduleds { get; set; }
+        public DbSet<JobScheduledExceptionDate> JobScheduledExceptionDates { get; set; }
+        public DbSet<ActiveLicense> ActiveLicenses { get; set; }
+        public DbSet<License> Licenses { get; set; }
+        public DbSet<SystemSetting> SystemSettings { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

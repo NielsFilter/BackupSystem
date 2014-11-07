@@ -1,0 +1,11 @@
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Domain\obj\Debug\BackupSystem.Domain.csprojResolveAssemblyReference.cache
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Domain\bin\Debug\BackupSystem.Domain.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Domain\bin\Debug\BackupSystem.Domain.pdb
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Domain\bin\Debug\BackupSystem.DAL.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Domain\bin\Debug\EntityFramework.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Domain\bin\Debug\BackupSystem.DAL.pdb
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Domain\bin\Debug\EntityFramework.xml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Domain\obj\Debug\BackupSystem.Domain.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Domain\obj\Debug\BackupSystem.Domain.pdb
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Domain\bin\Debug\BackupSystem.Common.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Domain\bin\Debug\BackupSystem.Common.pdb
