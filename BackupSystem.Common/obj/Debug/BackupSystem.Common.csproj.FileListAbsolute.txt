@@ -7,4 +7,3 @@ C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Common\bin\Debug\Bac
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Common\bin\Debug\BackupSystem.Common.pdb
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Common\obj\Debug\BackupSystem.Common.dll
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Common\obj\Debug\BackupSystem.Common.pdb
-C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Common\obj\Debug\BackupSystem.Common.csprojResolveAssemblyReference.cache

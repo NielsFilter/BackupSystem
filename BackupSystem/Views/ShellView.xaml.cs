@@ -1,5 +1,5 @@
 ﻿using BackupSystem.ApplicationLogic.ViewModels;
-using MahApps.Metro.Controls;
+using BackupSystem.Styles.Wpf.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,6 +68,11 @@ namespace BackupSystem.UI.Wpf.Views
         private void CreateBackup_Click(object sender, RoutedEventArgs e)
         {
             this.ViewModel.GoCreateBackup();
+        }
+
+        private void BackupItems_Click(object sender, RoutedEventArgs e)
+        {
+            this.ViewModel.GoBackupItemList();
         }
 
         #endregion

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\App.xaml
-151301028162
+16-263752338
 
-131168629677
-19-894833598
-ResourceDictionaries\ButtonResources.xaml;ResourceDictionaries\ColourResources.xaml;ResourceDictionaries\ConverterResources.xaml;ResourceDictionaries\GeneralResources.xaml;ResourceDictionaries\StaticValueResources.xaml;ResourceDictionaries\TextBlockResources.xaml;ResourceDictionaries\TextBoxResources.xaml;ResourceDictionaries\VectorResources.xaml;Views\Backup\CreateBackupView.xaml;Views\Core\HomeView.xaml;Views\Core\LoginView.xaml;Views\Core\UserActivation.xaml;Views\Core\UserDetailView.xaml;Views\Core\UserListView.xaml;Views\ShellView.xaml;
+151460746974
+20-465929480
+ResourceDictionaries\ButtonResources.xaml;ResourceDictionaries\ColourResources.xaml;ResourceDictionaries\ConverterResources.xaml;ResourceDictionaries\GeneralResources.xaml;ResourceDictionaries\StaticValueResources.xaml;ResourceDictionaries\TextBlockResources.xaml;ResourceDictionaries\VectorResources.xaml;Views\Backup\BackupItemListView.xaml;Views\Backup\BackupItemDetailView.xaml;Views\Backup\CreateBackupView.xaml;Views\Core\HomeView.xaml;Views\Core\LoginView.xaml;Views\Core\UserActivation.xaml;Views\Core\UserDetailView.xaml;Views\Core\UserListView.xaml;Views\ShellView.xaml;
 
 False
 

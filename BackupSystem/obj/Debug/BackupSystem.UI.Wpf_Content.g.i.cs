@@ -8,8 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/folder_128x128.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/folder_256x256.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/folder_32x32.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/ftp_128x128.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/ftp_256x256.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/ftp_32x32.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/ftp_64x64.png")]
 
 

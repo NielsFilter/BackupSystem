@@ -63,7 +63,7 @@ namespace BackupSystem.ApplicationLogic.ViewModels
         public override void OnLoad()
         {
             base.OnLoad();
-            base.Context.MasterViewModel = this;
+            base.AppContext.MasterViewModel = this;
 
             if (SessionContext.Current.LoggedInUser == null)
             {
@@ -121,6 +121,11 @@ namespace BackupSystem.ApplicationLogic.ViewModels
         public void GoCreateBackup()
         {
             base.Navigate(new CreateBackupViewModel());
+        }
+
+        public void GoBackupItemList()
+        {
+            base.Navigate(new BackupItemListViewModel());
         }
 
         #endregion

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:BackupSystem.ApplicationLogic.ViewModels;assembly=BackupSystem.ApplicationLogic"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        xmlns:m="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:m="clr-namespace:BackupSystem.Styles.Wpf.Controls;assembly=BackupSystem.Styles.Wpf"
         xmlns:local="clr-namespace:BackupSystem.UI.Wpf"
         WindowState="Maximized"
         Title="Backup System" Height="768" Width="1024"
@@ -91,6 +91,7 @@
                         <Button Content="System users" />
                         <Button Content="Generate Activation key" Click="GoToActivation_Click" />
                         <Button Content="Create Backup" Click="CreateBackup_Click" />
+                        <Button Content="Backup Items" Click="BackupItems_Click" />
                     </StackPanel>
 
                 </m:Flyout>

@@ -1,8 +1,8 @@
 ﻿<UserControl x:Class="BackupSystem.UI.Wpf.Views.Core.LoginView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:m="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        xmlns:ap="clr-namespace:BackupSystem.Controls.Wpf.AttachedProperties;assembly=BackupSystem.Controls.Wpf">
+        xmlns:m="clr-namespace:BackupSystem.Styles.Wpf.Controls;assembly=BackupSystem.Styles.Wpf"
+        xmlns:ap="clr-namespace:BackupSystem.Common.Wpf.AttachedProperties;assembly=BackupSystem.Common.Wpf">
     <Grid Style="{StaticResource GrdContent}">
         <Grid.RowDefinitions>
             <RowDefinition />

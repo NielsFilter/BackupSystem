@@ -7,15 +7,13 @@ using System.Text;
 
 namespace BackupSystem.Domain.Services
 {
-    public class ServiceBase<TRepository, TValidation>
+    public class ServiceBase<TValidation>
     {
         public ServiceBase()
         {
-            this.Repository = RepositoryFactory.GetRepository<TRepository>();
             this.Validation = ValidationFactory.GetValidation<TValidation>();
         }
 
-        public TRepository Repository { get; protected set; }
         public TValidation Validation { get; protected set; }
     }
 }

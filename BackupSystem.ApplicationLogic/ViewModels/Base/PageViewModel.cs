@@ -1,5 +1,7 @@
 ﻿using BackupSystem.Common.Mvvm.ViewModels;
 using BackupSystem.Common.Paging;
+using BackupSystem.DAL;
+using BackupSystem.Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +18,7 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Base
 
         public void Navigate(ViewModelBase viewModel)
         {
-            this.Context.Navigate(viewModel);
+            this.AppContext.Navigate(viewModel);
         }
 
         #endregion
@@ -91,7 +93,7 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Base
 
         #region Context
 
-        public SessionContext Context
+        public SessionContext AppContext
         {
             get { return SessionContext.Current; }
         }

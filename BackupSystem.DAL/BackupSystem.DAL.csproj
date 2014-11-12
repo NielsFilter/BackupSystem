@@ -76,7 +76,6 @@
     <Compile Include="BackupItemFTP.cs">
       <DependentUpon>BackupDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="IRepository\IUserRepository.cs" />
     <Compile Include="Job.cs">
       <DependentUpon>BackupDbModel.tt</DependentUpon>
     </Compile>
@@ -99,8 +98,6 @@
       <DependentUpon>BackupDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositoryFactory.cs" />
-    <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="SystemSetting.cs">
       <DependentUpon>BackupDbModel.tt</DependentUpon>
     </Compile>

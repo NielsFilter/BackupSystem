@@ -44,7 +44,7 @@ namespace BackupSystem.UI.Wpf.Views.Core
             InitializeComponent();
         }
 
-        private void UserList_Loaded(object sender, RoutedEventArgs e)
+        private void View_Loaded(object sender, RoutedEventArgs e)
         {
             this.ViewModel.OnLoad();
         }

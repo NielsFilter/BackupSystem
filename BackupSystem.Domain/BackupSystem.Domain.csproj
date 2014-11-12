@@ -33,6 +33,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -43,13 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IServices\IBackupItemService.cs" />
     <Compile Include="IServices\IUserService.cs" />
+    <Compile Include="IValidations\IBackupItemValidation.cs" />
     <Compile Include="IValidations\IUserValidation.cs" />
+    <Compile Include="Services\BackupItemService.cs" />
     <Compile Include="Services\ServiceBase.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceFactory.cs" />
     <Compile Include="ValidationFactory.cs" />
+    <Compile Include="Validations\BackupItemValidation.cs" />
     <Compile Include="Validations\UserValidation.cs" />
     <Compile Include="Validations\ValidationBase.cs" />
   </ItemGroup>

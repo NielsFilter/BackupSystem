@@ -1,0 +1,4 @@
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Common.Wpf\bin\Debug\BackupSystem.Common.Wpf.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Common.Wpf\bin\Debug\BackupSystem.Common.Wpf.pdb
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Common.Wpf\obj\Debug\BackupSystem.Common.Wpf.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Common.Wpf\obj\Debug\BackupSystem.Common.Wpf.pdb

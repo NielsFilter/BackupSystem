@@ -7,7 +7,7 @@ using System.Text;
 
 namespace BackupSystem.ApplicationLogic.ViewModels.Core
 {
-    public class HomeViewModel : PageViewModel
+    public class HomeViewModel : ViewModelBase
     {
         #region Constructors
 

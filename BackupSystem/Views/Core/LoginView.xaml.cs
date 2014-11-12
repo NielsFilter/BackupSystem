@@ -1,5 +1,5 @@
 ﻿using BackupSystem.ApplicationLogic.ViewModels.Core;
-using MahApps.Metro.Controls;
+using BackupSystem.Styles.Wpf.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -43,6 +43,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Expression\Blend\.NETFramework\v4.5\Libraries\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -56,7 +60,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AttachedProperties\PasswordBoxAttached.cs" />
     <Compile Include="Dialogs\FileFolderDialog.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -71,7 +74,6 @@
     <Compile Include="Panorama\Panorama.cs" />
     <Compile Include="Panorama\PanoramaGroup.cs" />
     <Compile Include="Panorama\PanoramaGroupWidthConverter.cs" />
-    <Compile Include="TreeHelper.cs" />
     <Page Include="LoadingLabel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -106,6 +108,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BackupSystem.Common.Wpf\BackupSystem.Common.Wpf.csproj">
+      <Project>{d6952490-9816-4875-8f9f-0a3250886794}</Project>
+      <Name>BackupSystem.Common.Wpf</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BackupSystem.Common\BackupSystem.Common.csproj">
       <Project>{20cdfc0f-b390-4ef1-a6b1-332d0ac7ace6}</Project>
       <Name>BackupSystem.Common</Name>

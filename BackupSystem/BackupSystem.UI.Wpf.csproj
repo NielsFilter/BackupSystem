@@ -41,13 +41,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="MahApps.Metro">
-      <HintPath>..\packages\MahApps.Metro.0.13.1.0\lib\net40\MahApps.Metro.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.0.13.1.0\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Expression\Blend\.NETFramework\v4.5\Libraries\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,6 +64,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\Backup\BackupItemListView.xaml.cs">
+      <DependentUpon>BackupItemListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Backup\BackupItemDetailView.xaml.cs">
+      <DependentUpon>BackupItemDetailView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Backup\CreateBackupView.xaml.cs">
       <DependentUpon>CreateBackupView.xaml</DependentUpon>
     </Compile>
@@ -112,13 +116,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ResourceDictionaries\TextBoxResources.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="ResourceDictionaries\VectorResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Backup\BackupItemListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Backup\BackupItemDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Backup\CreateBackupView.xaml">
       <SubType>Designer</SubType>
@@ -173,7 +181,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -184,6 +191,10 @@
     <ProjectReference Include="..\BackupSystem.ApplicationLogic\BackupSystem.ApplicationLogic.csproj">
       <Project>{e1e5b769-0c06-40e4-8735-b5476017f7e7}</Project>
       <Name>BackupSystem.ApplicationLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BackupSystem.Common.Wpf\BackupSystem.Common.Wpf.csproj">
+      <Project>{d6952490-9816-4875-8f9f-0a3250886794}</Project>
+      <Name>BackupSystem.Common.Wpf</Name>
     </ProjectReference>
     <ProjectReference Include="..\BackupSystem.Common\BackupSystem.Common.csproj">
       <Project>{20cdfc0f-b390-4ef1-a6b1-332d0ac7ace6}</Project>
@@ -197,11 +208,21 @@
       <Project>{ef6f79d6-e0b9-4a89-bfca-e6ace641b78b}</Project>
       <Name>BackupSystem.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BackupSystem.Styles.Wpf\BackupSystem.Styles.Wpf.csproj">
+      <Project>{5b1710d2-5dc8-4754-91b2-19165de49b3d}</Project>
+      <Name>BackupSystem.Styles.Wpf</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\folder_128x128.png" />
     <Resource Include="Images\folder_256x256.png" />
     <Resource Include="Images\folder_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ftp_128x128.png" />
+    <Resource Include="Images\ftp_256x256.png" />
+    <Resource Include="Images\ftp_32x32.png" />
+    <Resource Include="Images\ftp_64x64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

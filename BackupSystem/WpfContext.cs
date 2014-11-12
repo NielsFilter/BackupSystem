@@ -50,6 +50,8 @@ namespace BackupSystem.UI.Wpf
 
                     // Backup
                     this._pageLookup.Add(typeof(CreateBackupViewModel), typeof(CreateBackupView));
+                    this._pageLookup.Add(typeof(BackupItemListViewModel), typeof(BackupItemListView));
+                    this._pageLookup.Add(typeof(BackupItemDetailViewModel), typeof(BackupItemDetailView));
                 }
                 return this._pageLookup;
             }

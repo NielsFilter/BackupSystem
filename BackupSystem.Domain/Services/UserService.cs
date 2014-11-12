@@ -1,16 +1,16 @@
 ﻿using BackupSystem.DAL;
-using BackupSystem.DAL.IRepository;
 using BackupSystem.Domain.IServices;
 using BackupSystem.Domain.IValidations;
 using BackupSystem.Domain.Validations;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
 namespace BackupSystem.Domain.Services
 {
-    public class UserService : ServiceBase<IUserRepository, IUserValidation>, IUserService
+    public class UserService : ServiceBase<IUserValidation>, IUserService
     {
         #region ctors
 
@@ -21,40 +21,44 @@ namespace BackupSystem.Domain.Services
 
         #endregion
 
-        public void Save(bool isAdd, User user)
-        {
-            if (isAdd)
-            {
-                if (base.Validation.CanAdd(user))
-                {
-                    base.Repository.Add(user);
-                }
-            }
-            else
-            {
-                if (base.Validation.CanUpdate(user))
-                {
-                    base.Repository.Update(user);
-                }
-            }
-        }
-
-        public IEnumerable<User> GetUsers(string searchText = null)
+        public ObservableCollection<User> GetUsers(string searchText)
         {
             if (searchText == null)
             {
                 searchText = string.Empty;
             }
 
-            return base.Repository.GetUsers()
-                 .Where(u => u.Username.Contains(searchText))
-                 .AsEnumerable();
+            using (BackupSystemEntities ctx = new BackupSystemEntities())
+            {
+                return ctx.Users.Where(u => u.Username.Contains(searchText.Trim()) && u.IsActive).AsObservableCollection();
+            }
+        }
+
+        public void Save(bool isAdd, User user)
+        {
+            using (BackupSystemEntities ctx = new BackupSystemEntities())
+            {
+                if (isAdd && base.Validation.CanAdd(user))
+                {
+                    // Add
+                    ctx.Users.Add(user);
+                    ctx.SaveChanges();
+                }
+                else if (base.Validation.CanUpdate(user))
+                {
+                    // Update
+                    ctx.SaveChanges();
+                }
+            }
         }
 
         public User GetByUsername(string username)
         {
-            return base.Repository.GetUsers()
-                .FirstOrDefault(u => u.Username.Equals(username, StringComparison.InvariantCultureIgnoreCase));
+            using (BackupSystemEntities ctx = new BackupSystemEntities())
+            {
+                return ctx.Users
+                    .FirstOrDefault(u => u.Username.Equals(username, StringComparison.InvariantCultureIgnoreCase) && u.IsActive);
+            }
         }
 
         public User LoginUser(string username, string password)

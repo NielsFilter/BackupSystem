@@ -104,7 +104,7 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Core
         {
             base.ShowLoading(() =>
                 {
-                    this.List = this._userService.GetUsers(this.SearchText).AsObservableCollection();
+                    this.List = this._userService.GetUsers(this.SearchText);
                 }, "Loading users...");
         }
 
