@@ -63,9 +63,6 @@
     <Compile Include="Dialogs\FileFolderDialog.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LoadingLabel.xaml.cs">
-      <DependentUpon>LoadingLabel.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Paging.xaml.cs">
       <DependentUpon>Paging.xaml</DependentUpon>
     </Compile>
@@ -74,10 +71,6 @@
     <Compile Include="Panorama\Panorama.cs" />
     <Compile Include="Panorama\PanoramaGroup.cs" />
     <Compile Include="Panorama\PanoramaGroupWidthConverter.cs" />
-    <Page Include="LoadingLabel.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Paging.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

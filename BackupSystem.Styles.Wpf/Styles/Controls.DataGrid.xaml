@@ -308,7 +308,7 @@
         <Setter Property="SnapsToDevicePixels"
                 Value="True" />
         <Setter Property="Padding"
-                Value="0" />
+                Value="0,6" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridCell}">
@@ -402,7 +402,7 @@
         <Setter Property="Foreground"
                 Value="{DynamicResource BlackBrush}" />
         <Setter Property="Margin"
-                Value="0,0,0,0" />
+                Value="0" />
         <Style.Triggers>
             <Trigger Property="IsSelected"
                      Value="True">
@@ -474,7 +474,7 @@
         <Setter Property="BorderBrush"
                 Value="{DynamicResource AccentColorBrush}" />
         <Setter Property="BorderThickness"
-                Value="0,0,0,0" />
+                Value="1" />
         <Setter Property="HorizontalGridLinesBrush"
                 Value="{DynamicResource GrayBrush7}" />
         <Setter Property="VerticalGridLinesBrush"
@@ -489,6 +489,8 @@
                 Value="{StaticResource MetroDataGridRow}" />
         <Setter Property="HeadersVisibility"
                 Value="Column" />
+        <Setter Property="IsReadOnly"
+                Value="True" />
         <Setter Property="DropLocationIndicatorStyle">
             <Setter.Value>
                 <Style TargetType="Separator">

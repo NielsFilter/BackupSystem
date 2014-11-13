@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Timers;
 
 namespace BackupSystem.ApplicationLogic.ViewModels.Base
 {
@@ -14,7 +15,23 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Base
     {
         private const int PAGE_SIZE = 20;
 
+        #region ctors
+
+        public PageViewModel(IParentViewModel parentVM)
+            : base()
+        {
+            this.ParentViewModel = parentVM;
+            if (this.ParentViewModel != null)
+            {
+                this.ParentViewModel.IsLoading = false;
+            }
+        }
+
+        #endregion
+
         #region Navigate
+
+        public IParentViewModel ParentViewModel { get; set; }
 
         public void Navigate(ViewModelBase viewModel)
         {
@@ -103,7 +120,7 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Base
         #region Loading
 
         /// <summary>
-        /// To show the loading bar while doing work, use this method. The loading will show when the work starts and hide when the work completes or fails.
+        /// To show the loading bar on the entire page while doing work, use this method. The loading will show when the work starts and hide when the work completes or fails.
         /// Your work (passed in the action parameter) will run on a Background thread while the Loading UI will continue on the UI Thread.
         /// <example>
         /// Example: 
@@ -115,30 +132,78 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Base
         /// Alternatively you could call it like this
         /// ShowLoading(MyHeavyWorkMethod);  // All the heavy work will then be in a method called 'MyHeavyWorkMethod'
         /// </example>
+        /// <remarks>This method uses the IParentViewModel's <c>IsLoading</c> and <c>LoadingMessage</c> methods.</remarks>
         /// </summary>
         /// <param name="action">The work that needs to be done while loading is shown.</param>
         public void ShowLoading(Action action, string loadingMessage = "Loading...", double loadingDelay = 400)
         {
-            action.Invoke();
+            if (this.ParentViewModel != null)
+            {
+                Action<bool> setLoadingVisibility = (isVisible) =>
+                    {
+                        if (this.ParentViewModel != null)
+                        {
+                            this.ParentViewModel.IsLoading = isVisible;
+                        }
+                    };
 
-            //TODO: Implement
-            //this.CurrentMaster.LoadingMessage = loadingMessage;
-            //this._showLoadingDelayTimer.Interval = loadingDelay;
-            //this._showLoadingDelayTimer.Start(); // Shows "is busy / loading" after a delay
+                this.ParentViewModel.LoadingMessage = loadingMessage;
 
-            //BackgroundWorker worker = new BackgroundWorker();
-            //worker.DoWork += delegate(object s, DoWorkEventArgs args)
-            //{
-            //    // Invokes your work to be done on a background thread.
-            //    action.Invoke();
-            //};
-            //worker.RunWorkerAsync();
-            //worker.RunWorkerCompleted += delegate(object sender, RunWorkerCompletedEventArgs e)
-            //{
-            //    // Work is complete. Hides Loading again. This will even be called when the work throws an exception.
-            //    this._showLoadingDelayTimer.Stop();
-            //    this.CurrentMaster.IsLoading = false;
-            //};
+                this.ShowLoading(setLoadingVisibility, action, loadingDelay);
+            }
+            else
+            {
+                // Just do the work without showing loading.
+                action.Invoke();
+            }
+        }
+
+        /// <summary>
+        /// To show the loading bar in a specific region while doing work, use this method. The loading will show when the work starts and hide when the work completes or fails.
+        /// Your work (passed in the action parameter) will run on a Background thread while the Loading UI will continue on the UI Thread.
+        /// <example>
+        /// Example: 
+        /// ShowLoading(SetLoadingVisibility, () => 
+        /// {
+        ///     // Do the heavy work here.
+        /// });
+        /// </example>
+        /// </summary>
+        /// <param name="action">The work that needs to be done while loading is shown.</param>
+        public void ShowLoading(Action<bool> controlLoadDel, Action action, double loadingDelay = 400)
+        {
+            Timer loadingDelayTimer = null;
+            if (loadingDelay <= 0)
+            {
+                controlLoadDel(true);
+            }
+            else
+            {
+                // Shows "loading" after a delay
+                loadingDelayTimer = new Timer(loadingDelay);
+                loadingDelayTimer.Elapsed += (s, e) =>
+                {
+                    loadingDelayTimer.Stop();
+                    controlLoadDel(true);
+                };
+                loadingDelayTimer.Start();
+            }
+
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.DoWork += (o, e) => action.Invoke(); // Invokes your work to be done on a background thread.
+            worker.RunWorkerCompleted += (o, e) =>
+            {
+                // Work is complete. Hides Loading again. This will even be called when the work throws an exception.
+                controlLoadDel(false);
+
+                if (loadingDelayTimer != null)
+                {
+                    loadingDelayTimer.Stop();
+                    loadingDelayTimer.Dispose();
+                }
+            };
+
+            worker.RunWorkerAsync();
         }
 
         #endregion

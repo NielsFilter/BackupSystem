@@ -1,4 +1,5 @@
 ﻿using BackupSystem.ApplicationLogic.ViewModels.Base;
+using BackupSystem.Common.Mvvm.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,8 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Backup
     {
         #region ctors
 
-        public CreateBackupViewModel()
-            : base()
+        public CreateBackupViewModel(IParentViewModel parentVM)
+            : base(parentVM)
         {
 
         }

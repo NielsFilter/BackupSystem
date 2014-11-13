@@ -10,17 +10,17 @@ using System.Threading.Tasks;
 
 namespace BackupSystem.ApplicationLogic.ViewModels.Core
 {
-    public class UserActivationViewModel : ViewModelBase //: PageViewModel<>
+    public class UserActivationViewModel : PageViewModel
     {
-        //    #region Constructors
+        #region Constructors
 
-        //    public UserActivationViewModel()
-        //        : base()
-        //    {
+        public UserActivationViewModel(IParentViewModel parentVM)
+            : base(parentVM)
+        {
 
-        //    }
+        }
 
-        //    #endregion
+        #endregion
 
         //    #region Properties
 

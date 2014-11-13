@@ -12,7 +12,7 @@
     <Window.DataContext>
         <vm:ShellViewModel />
     </Window.DataContext>
-    <Grid>
+    <Grid>        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="324*" />
@@ -43,7 +43,15 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Backup System" Style="{StaticResource TbHeading}" VerticalAlignment="Top" />
+
+            <Grid Background="{Binding PanelMessageType, Converter={StaticResource stringToStyleConverter}}" Visibility="{Binding IsPanelMessageShow, Converter={StaticResource boolToVisibilityConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Style="{StaticResource TbHeading}" Text="{Binding PanelMessageHeader}" />
+            </Grid>
+            
+            <!--<TextBlock Text="Backup System" Style="{StaticResource TbHeading}" VerticalAlignment="Top" />-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1"
                         Visibility="{Binding Context.LoggedInUser, Mode=OneWay, Converter={StaticResource hasValueToVisibilityConverter}}" >
                 <Button Style="{DynamicResource BtnHome}" ToolTip="Go to Home Page" Click="Home_Click"/>
@@ -52,36 +60,24 @@
         </Grid>
 
 
-        <!--<ctrls:LoadingLabel Visibility="{Binding IsLoading, Mode=TwoWay, Converter={StaticResource boolToVisibilityConverter}}" LoadingMessage="{Binding LoadingMessage}" Grid.RowSpan="3" />-->
-
-
-        <!--Command Bar-->
-        <!--<Border Grid.Row="2" />-->
-
         <!-- Content - Pages are loaded into this content control -->
         <m:TransitioningContentControl x:Name="contentMain" Grid.Row="1" Grid.RowSpan="3" Transition="RightReplace" />
-
-
-
+    
         <!-- Loading Bar -->
         <Grid Background="Transparent" Grid.RowSpan="4" Visibility="{Binding IsLoading, Converter={StaticResource boolToVisibilityConverter}, Mode=TwoWay}">
-            <Grid Opacity="0.1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Black"/>
-            <Border Width="300" Height="150" BorderThickness="1.5" BorderBrush="#D0D7E4" VerticalAlignment="Center" HorizontalAlignment="Center" Background="White">
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <m:ProgressRing Foreground="{DynamicResource AccentColorBrush}" Height="100" Width="100" IsActive="True"/>
+            <Grid Opacity="0.9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="{DynamicResource WhiteBrush}" />
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <m:ProgressRing Foreground="{DynamicResource AccentColorBrush}" Height="100" Width="100" IsActive="{Binding IsLoading}"/>
                     <TextBlock  Text="{Binding LoadingMessage}" Style="{StaticResource TbSubHeading}" />
                 </StackPanel>
-            </Border>
         </Grid>
 
-        <!--Visibility="{Binding IsMenuVisible, Mode=TwoWay, Converter={StaticResource boolToVisibilityConverter}}"-->
         <!-- Flyout Menu -->
         <Grid Grid.RowSpan="4" Grid.Column="1"  Visibility="{Binding Context.LoggedInUser, Mode=OneWay, Converter={StaticResource hasValueToVisibilityConverter}}">
             <Grid Visibility="{Binding IsMenuVisible, Mode=TwoWay, Converter={StaticResource boolToVisibilityConverter}}">
                 <m:Flyout BorderBrush="Transparent" AnimateOnPositionChange="True" 
                   Header="Menu" Position="Right" Theme="Accent"
                   IsOpen="{Binding IsMenuVisible, Mode=TwoWay}">
-                    <!--IsOpen="{Binding IsMenuVisible, Mode=TwoWay}"-->
 
                     <StackPanel Orientation="Vertical" Width="200" Margin="15,5"
                         Visibility="{Binding IsMenuVisible, Mode=TwoWay, Converter={StaticResource boolToVisibilityConverter}}">

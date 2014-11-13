@@ -1,4 +1,5 @@
 ﻿using BackupSystem.ApplicationLogic.ViewModels.Base;
+using BackupSystem.Common.Enums;
 using BackupSystem.Common.Mvvm.ViewModels;
 using BackupSystem.DAL;
 using BackupSystem.Domain;
@@ -18,9 +19,10 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Backup
 
         #region ctors
 
-        public BackupItemListViewModel()
-            : base()
+        public BackupItemListViewModel(IParentViewModel parentVM)
+            : base(parentVM)
         {
+            this.IsGridLoading = false;
             this._svcBackupItem = ServiceFactory.GetService<IBackupItemService>();
         }
 
@@ -68,19 +70,19 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Backup
             }
         }
 
-        private string _searchText;
-        public string SearchText
+        private bool _isGridLoading;
+        public bool IsGridLoading
         {
             get
             {
-                return this._searchText;
+                return this._isGridLoading;
             }
             set
             {
-                if (value != this._searchText)
+                if (value != this._isGridLoading)
                 {
-                    this._searchText = value;
-                    base.NotifyPropertyChanged("SearchText");
+                    this._isGridLoading = value;
+                    base.NotifyPropertyChanged("IsGridLoading");
                 }
             }
         }
@@ -103,10 +105,15 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Backup
 
         private void loadList()
         {
-            base.ShowLoading(() =>
+            base.ShowLoading(setGridLoading, () =>
             {
-                this.List = this._svcBackupItem.GetBackupItems(this.SearchText);
-            }, "Loading users...");
+                this.List = this._svcBackupItem.GetBackupItems(base.Pager.SearchText);
+            });
+        }
+
+        private void setGridLoading(bool isGridLoading)
+        {
+            this.IsGridLoading = isGridLoading;
         }
 
         #endregion
@@ -115,17 +122,28 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Backup
 
         public void Delete()
         {
-            throw new NotImplementedException();
+            base.ShowLoading(() =>
+            {
+                try
+                {
+                    this._svcBackupItem.Delete(this.SelectedItem);
+                }
+                catch (Exception ex)
+                {
+                    //TODO: SHOW FAILED
+                    base.ParentViewModel.ShowPanelMessage(UserMessageType.ERROR, "Failed to delete backup item.", "");
+                }
+            }, "Deleting backup item...");
         }
 
         public void Edit()
         {
-            throw new NotImplementedException();
+            base.Navigate(new BackupItemDetailViewModel(this.ParentViewModel, this.SelectedItem));
         }
 
         public void Add()
         {
-            throw new NotImplementedException();
+            base.Navigate(new BackupItemDetailViewModel(this.ParentViewModel));
         }
 
         #endregion

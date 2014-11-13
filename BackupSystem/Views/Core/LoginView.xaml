@@ -21,19 +21,16 @@
         <!-- Username -->
         <TextBlock Grid.Column="1" Grid.Row="1" Text="User" Margin="10" />
         <TextBox Grid.Column="2" Grid.Row="1"
-                 Style="{StaticResource TxtDefault}"
                  m:TextboxHelper.Watermark="Username"
                  Text="{Binding Username, Mode=TwoWay, ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}" />
 
         <!-- Password -->
         <TextBlock Grid.Column="1" Grid.Row="2" Text="Password" Margin="10"/>
         <PasswordBox Grid.Column="2" Grid.Row="2"
-                     Style="{StaticResource PwdDeafult}"
                      ap:PasswordBoxAttached.PasswordText="{Binding Password, Mode=OneWayToSource}" />
 
         <Button Grid.Column="2" Grid.Row="3" HorizontalAlignment="Right"
                 Content="Login" IsDefault="True"
-                Style="{StaticResource BtnDefault}"
                 Click="Login_Click" />
 
         <!-- Left -->

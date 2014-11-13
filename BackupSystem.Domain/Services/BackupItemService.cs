@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections.ObjectModel;
+using System.Threading;
 
 namespace BackupSystem.Domain.Services
 {
@@ -39,17 +40,30 @@ namespace BackupSystem.Domain.Services
         {
             using (BackupSystemEntities ctx = new BackupSystemEntities())
             {
-                //if (isAdd && base.Validation.CanAdd(user))
-                //{
-                //    // Add
-                //    ctx.Users.Add(user);
-                //    ctx.SaveChanges();
-                //}
-                //else if (base.Validation.CanUpdate(user))
-                //{
-                //    // Update
-                //    ctx.SaveChanges();
-                //}
+                if (isAdd && base.Validation.CanAdd(backupItem))
+                {
+                    // Add
+                    ctx.BackupItems.Add(backupItem);
+                    ctx.SaveChanges();
+                }
+                else if (base.Validation.CanUpdate(backupItem))
+                {
+                    // Update
+                    ctx.SaveChanges();
+                }
+            }
+        }
+
+        public void Delete(BackupItem backupItem)
+        {
+            using (BackupSystemEntities ctx = new BackupSystemEntities())
+            {
+                if (base.Validation.CanDelete(backupItem))
+                {
+                    ctx.BackupItems.Attach(backupItem);
+                    ctx.BackupItems.Remove(backupItem);
+                    ctx.SaveChanges();
+                }
             }
         }
     }

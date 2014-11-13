@@ -17,8 +17,8 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Core
 
         #region ctors
 
-        public UserListViewModel()
-            : base()
+        public UserListViewModel(IParentViewModel parentVM)
+            : base(parentVM)
         {
             this._userService = ServiceFactory.GetService<IUserService>();
         }
@@ -116,7 +116,7 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Core
         {
             if (this.SelectedItem != null)
             {
-                base.Navigate(new UserDetailViewModel(this.SelectedItem));
+                base.Navigate(new UserDetailViewModel(this.ParentViewModel));
             }
         }
 

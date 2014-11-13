@@ -3,6 +3,7 @@
                     xmlns:conv="clr-namespace:BackupSystem.Common.Mvvm.Converters;assembly=BackupSystem.Common">
 
     <conv:BoolToYesNoConverter x:Key="boolToYesNoConverter" />
+    <conv:BoolToStyleConverter x:Key="boolToStyleConverter" />    
     <conv:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
     <conv:StringCaseConverter x:Key="stringCaseConverter" />
     <conv:StringToStyleConverter x:Key="stringToStyleConverter" />
@@ -12,7 +13,7 @@
     <conv:InvertBoolConverter x:Key="invertBoolConverter" />
     <conv:StringToDecryptConverter x:Key="stringToDecryptConverter" />
     <conv:BoolToYesNoPathStyleConverter x:Key="boolToYesNoPathStyleConverter" />
-    <conv:BoolToYesNoButtonStyleConverter x:Key="boolToYesNoButtonStyleConverter" />
+    <conv:BoolToYesNoVectorStyleConverter x:Key="boolToYesNoVectorStyleConverter" />
     <conv:BoolToCustomTextConverter x:Key="boolToCustomTextConverter" />
     <conv:HasValueToVisibilityConverter x:Key="hasValueToVisibilityConverter" />
 

@@ -1,7 +1,5 @@
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Controls.Wpf\obj\Debug\BackupSystem.Controls.Wpf.csprojResolveAssemblyReference.cache
-C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Controls.Wpf\obj\Debug\LoadingLabel.baml
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Controls.Wpf\obj\Debug\Paging.baml
-C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Controls.Wpf\obj\Debug\LoadingLabel.g.cs
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Controls.Wpf\obj\Debug\Paging.g.cs
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Controls.Wpf\obj\Debug\BackupSystem.Controls.Wpf_MarkupCompile.cache
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Controls.Wpf\obj\Debug\BackupSystem.Controls.Wpf.g.resources

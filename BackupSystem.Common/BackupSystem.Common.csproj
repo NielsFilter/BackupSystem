@@ -58,9 +58,10 @@
     <Compile Include="Mvvm\Commands\CommandGeneric.cs" />
     <Compile Include="Mvvm\Converters\BoolToCustomTextConverter.cs" />
     <Compile Include="Mvvm\Converters\BoolToVisibilityConverter.cs" />
-    <Compile Include="Mvvm\Converters\BoolToYesNoButtonStyleConverter.cs" />
+    <Compile Include="Mvvm\Converters\BoolToYesNoVectorStyleConverter.cs" />
     <Compile Include="Mvvm\Converters\BoolToYesNoConverter.cs" />
     <Compile Include="Mvvm\Converters\BoolToYesNoPathStyleConverter.cs" />
+    <Compile Include="Mvvm\Converters\BoolToStyleConverter.cs" />
     <Compile Include="Mvvm\Converters\HasValueToVisibilityConverter.cs" />
     <Compile Include="Mvvm\Converters\InvertBoolConverter.cs" />
     <Compile Include="Mvvm\Converters\StringCaseConverter.cs" />

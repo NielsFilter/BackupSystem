@@ -37,7 +37,6 @@
 
             <Button  Grid.Column="2" Grid.Row="2" HorizontalAlignment="Right"
                      Content="Activate" IsDefault="True"
-                     Style="{StaticResource BtnDefault}"
                      Command="{Binding ActivateLicenseCommand}" />
 
         </Grid>

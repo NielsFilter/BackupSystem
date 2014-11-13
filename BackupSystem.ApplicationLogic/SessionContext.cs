@@ -1,4 +1,5 @@
-﻿using BackupSystem.Common.Enums;
+﻿using BackupSystem.ApplicationLogic.ViewModels;
+using BackupSystem.Common.Enums;
 using BackupSystem.Common.Mvvm.ViewModels;
 using BackupSystem.DAL;
 using System;

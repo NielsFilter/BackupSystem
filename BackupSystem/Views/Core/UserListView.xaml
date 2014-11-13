@@ -19,7 +19,6 @@
         </StackPanel>
 
         <TextBox Grid.Row="0" Width="300" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                 Style="{StaticResource TxtDefault}"
                  m:TextboxHelper.Watermark="Type to search..."
                  Text="{Binding Pager.SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  TextChanged="Search_TextChanged" />
@@ -32,7 +31,7 @@
             </Grid.RowDefinitions>
             
             <!-- List -->
-            <DataGrid Grid.Row="0" x:Name="dgList" AutoGenerateColumns="False" Style="{StaticResource dgDefault}"
+            <DataGrid Grid.Row="0" x:Name="dgList" AutoGenerateColumns="False" Style="{StaticResource MetroDataGrid}"
                   SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                   ItemsSource="{Binding ListPaged}"
                       MouseDoubleClick="List_DoubleClick">
@@ -48,11 +47,10 @@
 
             <!-- Info Panel -->
             <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" Height="1" />
-            <Border Grid.Row="2"  Padding="10" Background="#FF303030">
+            <Border Grid.Row="2" Style="{StaticResource BrdSelectionPanel}">
                 <Grid>
                     <TextBlock Style="{StaticResource TbInfo1}"
                                Text="{StaticResource NoSelection}"
-                               Foreground="{StaticResource TextDisabledBrush}"
                                Visibility="{Binding SelectedItem, ElementName=dgList, Converter={StaticResource hasValueToVisibilityConverter}, ConverterParameter=True}" />
 
                     <Grid DataContext="{Binding SelectedItem, ElementName=dgList}"
@@ -63,16 +61,16 @@
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Text="{Binding Username}" Style="{StaticResource TbInfo1}" Foreground="#FF74B8D4" />
-                            <TextBlock Text="{Binding Role}" Style="{StaticResource TbInfo6}" Foreground="White" />
+                            <TextBlock Text="{Binding Username}" Style="{StaticResource TbInfo1}" />
+                            <TextBlock Text="{Binding Role}" Style="{StaticResource TbInfo6}" />
                         </StackPanel>
 
                         <TextBlock Grid.Column="1" Style="{StaticResource TbInfo6}" HorizontalAlignment="Right"
                                    Text="{Binding IsActive, Converter={StaticResource boolToCustomTextConverter}, ConverterParameter='Active|Inactive'}"  />
 
                         <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" DataContext="{Binding DataContext, ElementName=Root}">
-                            <Button Style="{StaticResource BtnDelete}" ToolTip="Delete" Foreground="White" Command="{Binding DeleteCommand}" />
-                            <Button Style="{StaticResource BtnEdit}" ToolTip="Edit" Foreground="White" Command="{Binding EditCommand}" />
+                            <Button Style="{StaticResource BtnDelete}" ToolTip="Delete" Command="{Binding DeleteCommand}" />
+                            <Button Style="{StaticResource BtnEdit}" ToolTip="Edit" Command="{Binding EditCommand}" />
                         </StackPanel>
                     </Grid>
                 </Grid>

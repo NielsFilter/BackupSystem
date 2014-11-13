@@ -12,5 +12,6 @@ namespace BackupSystem.Domain.IServices
     {
         ObservableCollection<BackupItem> GetBackupItems(string searchText);
         void Save(bool isAdd, BackupItem backupItem);
+        void Delete(BackupItem backupItem);
     }
 }

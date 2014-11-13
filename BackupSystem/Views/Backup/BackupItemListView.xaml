@@ -18,7 +18,6 @@
         </StackPanel>
 
         <TextBox Grid.Row="0" Width="300" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                 Style="{StaticResource TxtDefault}"
                  m:TextboxHelper.Watermark="Type to search..."
                  Text="{Binding Pager.SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  TextChanged="Search_TextChanged" />
@@ -30,15 +29,24 @@
                 <RowDefinition Height="{StaticResource InfoBarHeight}" />
             </Grid.RowDefinitions>
 
+            <!-- Grid Loading -->
+
             <!-- List -->
-            <DataGrid Grid.Row="0" x:Name="dgList" AutoGenerateColumns="False" Style="{StaticResource dgDefault}"
+            <DataGrid Grid.Row="0" x:Name="dgList" AutoGenerateColumns="False" Style="{StaticResource MetroDataGrid}"
                   SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                   ItemsSource="{Binding ListPaged}"
-                      MouseDoubleClick="List_DoubleClick">
+                  MouseDoubleClick="List_DoubleClick">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Name}" Header="Backup Name" />
                     <DataGridTextColumn Binding="{Binding BackupTypeCode}" Header="Type" />
-                    <DataGridTextColumn Binding="{Binding IsDefault, Converter={StaticResource boolToCustomTextConverter}, ConverterParameter='Yes| '}" Header="Is Default?" />
+                    <DataGridTemplateColumn Header="Is Default?">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Path Style="{Binding IsDefault, Converter={StaticResource boolToStyleConverter}, ConverterParameter='vcTick|'}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
                 </DataGrid.Columns>
             </DataGrid>
 
@@ -47,11 +55,10 @@
 
             <!-- Info Panel -->
             <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" Height="1" />
-            <Border Grid.Row="2"  Padding="10" Background="#FF303030">
+            <Border Grid.Row="2" Style="{StaticResource BrdSelectionPanel}">
                 <Grid>
                     <TextBlock Style="{StaticResource TbInfo1}"
                                Text="{StaticResource NoSelection}"
-                               Foreground="{StaticResource TextDisabledBrush}"
                                Visibility="{Binding SelectedItem, ElementName=dgList, Converter={StaticResource hasValueToVisibilityConverter}, ConverterParameter=True}" />
 
                     <Grid DataContext="{Binding SelectedItem, ElementName=dgList}"
@@ -62,21 +69,29 @@
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Text="{Binding Name}" Style="{StaticResource TbInfo1}" Foreground="#FF74B8D4" />
-                            <TextBlock Text="{Binding BackupTypeCode}" Style="{StaticResource TbInfo6}" Foreground="White" />
+                            <TextBlock Text="{Binding Name}" Style="{StaticResource TbInfo1}" />
+                            <TextBlock Text="{Binding BackupTypeCode}" Style="{StaticResource TbInfo6}" />
                         </StackPanel>
 
                         <TextBlock Grid.Column="1" Style="{StaticResource TbInfo6}" HorizontalAlignment="Right"
                                    Text="{Binding IsActive, Converter={StaticResource boolToCustomTextConverter}, ConverterParameter='Active|Inactive'}"  />
 
                         <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" DataContext="{Binding DataContext, ElementName=Root}">
-                            <Button Style="{StaticResource BtnDelete}" ToolTip="Delete" Foreground="White" Click="Delete_Click" />
-                            <Button Style="{StaticResource BtnEdit}" ToolTip="Edit" Foreground="White" Click="Edit_Click" />
+                            <Button Style="{StaticResource BtnDelete}" ToolTip="Delete" Click="Delete_Click" />
+                            <Button Style="{StaticResource BtnEdit}" ToolTip="Edit" Click="Edit_Click" />
                         </StackPanel>
                     </Grid>
                 </Grid>
             </Border>
+            
+            <Grid Background="Transparent" Grid.RowSpan="10" Grid.ColumnSpan="10" Visibility="{Binding IsGridLoading, Converter={StaticResource boolToVisibilityConverter}, Mode=TwoWay}">
+                <Grid Opacity="0.9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="{DynamicResource WhiteBrush}" />
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <m:ProgressRing Foreground="{DynamicResource AccentColorBrush}" Height="100" Width="100" IsActive="{Binding IsGridLoading}"/>
+                    <TextBlock  Text="Retrieving items..." Style="{StaticResource TbSubHeading}" />
+                </StackPanel>
+            </Grid>
         </Grid>
-        
+
     </Grid>
 </UserControl>

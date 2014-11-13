@@ -15,8 +15,8 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Tools
     {
         #region Constructors
 
-        public ActivationKeyGeneratorViewModel()
-            : base()
+        public ActivationKeyGeneratorViewModel(IParentViewModel parentVM)
+            : base(parentVM)
         {
 
         }

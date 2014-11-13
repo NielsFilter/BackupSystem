@@ -49,8 +49,8 @@
   <ItemGroup>
     <Compile Include="IServices\IBackupItemService.cs" />
     <Compile Include="IServices\IUserService.cs" />
-    <Compile Include="IValidations\IBackupItemValidation.cs" />
-    <Compile Include="IValidations\IUserValidation.cs" />
+    <Compile Include="Validations\IBackupItemValidation.cs" />
+    <Compile Include="Validations\IUserValidation.cs" />
     <Compile Include="Services\BackupItemService.cs" />
     <Compile Include="Services\ServiceBase.cs" />
     <Compile Include="Services\UserService.cs" />

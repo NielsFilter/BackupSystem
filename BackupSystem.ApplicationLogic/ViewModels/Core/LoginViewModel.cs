@@ -17,8 +17,8 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Core
 
         #region Constructors
 
-        public LoginViewModel()
-            : base()
+        public LoginViewModel(IParentViewModel parentVM)
+            : base(parentVM)
         {
             this._userService = ServiceFactory.GetService<IUserService>();
         }
@@ -117,7 +117,7 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Core
                     if (user != null)
                     {
                         SessionContext.Current.LoggedInUser = user;
-                        base.Navigate(new HomeViewModel());
+                        base.Navigate(new HomeViewModel(this.ParentViewModel));
                         return;
                     }
 

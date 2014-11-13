@@ -4,10 +4,10 @@
     <!-- DEFAULT -->
     <!--=========-->
     <Style x:Key="vectorDefault" TargetType="Path">
-        <Setter Property="Height" Value="Auto" />
+        <Setter Property="Height" Value="20" />
         <Setter Property="Width" Value="Auto" />
         <Setter Property="Stretch" Value="Uniform" />
-        <Setter Property="Fill" Value="Black" />
+        <Setter Property="Fill" Value="{DynamicResource BlackBrush}" />
     </Style>
 
 

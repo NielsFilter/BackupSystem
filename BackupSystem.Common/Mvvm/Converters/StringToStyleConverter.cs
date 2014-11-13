@@ -22,13 +22,7 @@ namespace BackupSystem.Common.Mvvm.Converters
             }
 
             // Find the style in the application's resources
-            var style = Application.Current.TryFindResource(value.ToString());
-            if (style != null && style is Style)
-            {
-                return (Style)style;
-            }
-
-            return null;
+            return Application.Current.TryFindResource(value.ToString()) as Style;
         }
 
         /// <summary>

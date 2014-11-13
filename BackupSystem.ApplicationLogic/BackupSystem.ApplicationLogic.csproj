@@ -52,6 +52,7 @@
     <Compile Include="ViewModels\Backup\BackupItemDetailViewModel.cs" />
     <Compile Include="ViewModels\Backup\BackupItemListViewModel.cs" />
     <Compile Include="ViewModels\Backup\CreateBackupViewModel.cs" />
+    <Compile Include="ViewModels\Base\IParentViewModel.cs" />
     <Compile Include="ViewModels\Base\PageViewModel.cs" />
     <Compile Include="ViewModels\Core\HomeViewModel.cs" />
     <Compile Include="ViewModels\Core\LoginViewModel.cs" />

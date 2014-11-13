@@ -31,11 +31,10 @@
             </Grid.ColumnDefinitions>
 
             <TextBox Grid.Column="0"
-                 Style="{StaticResource TxtDefault}"
                  m:TextboxHelper.Watermark="Username"
                  Text="{Binding FileFolderPath}" />
 
-            <Button Grid.Column="1" Style="{StaticResource BtnDefault}"
+            <Button Grid.Column="1" 
                     Content="Choose File or Folder" Click="FileOrFolder_Click" />
         </Grid>
 
@@ -58,16 +57,15 @@
 
             <Image Source="../../Images/folder_128x128.png" Grid.ColumnSpan="2" Height="128" Width="128" />
 
-            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource TbDefault}" Text="Path: " />
-            <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource TbDefault}" Text="Size: " />
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Path: " />
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Size: " />
             
             <TextBox Style="{StaticResource TxtStrong}" Text="{Binding SourceName}" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Height="40"/>
-            <TextBlock Style="{StaticResource TbDefault}" Text="{Binding SourcePath}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"/>
-            <TextBlock Style="{StaticResource TbDefault}" Text="{Binding SourceSize}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"/>
+            <TextBlock Text="{Binding SourcePath}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"/>
+            <TextBlock Text="{Binding SourceSize}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"/>
             
             <Button Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                     Content="Change"
-                    Style="{StaticResource BtnDefault}"
                     Click="ChangeFrom_Click"/>
         </Grid>
 
@@ -87,15 +85,14 @@
 
             <Image Source="../../Images/ftp_128x128.png" Grid.ColumnSpan="2" Height="128" Width="128"  />
 
-            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource TbDefault}" Text="Path: " />
-            <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource TbDefault}" Text="Size: " />
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Path: " />
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Size: " />
 
             <TextBox Style="{StaticResource TxtStrong}" Text="{Binding DestinationName}" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Height="40"/>
-            <TextBlock Style="{StaticResource TbDefault}" Text="{Binding DestinationPath}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"/>
+            <TextBlock Text="{Binding DestinationPath}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"/>
 
             <Button Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                     Content="Change"
-                    Style="{StaticResource BtnDefault}"
                     Click="ChangeFrom_Click"/>
         </Grid>
     </Grid>

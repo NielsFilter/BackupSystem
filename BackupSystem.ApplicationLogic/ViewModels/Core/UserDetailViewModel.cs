@@ -17,8 +17,8 @@ namespace BackupSystem.ApplicationLogic.ViewModels.Core
 
         #region ctors
 
-        public UserDetailViewModel(User user = null)
-            : base()
+        public UserDetailViewModel(IParentViewModel parentVM, User user = null)
+            : base(parentVM)
         {
             this._userService = ServiceFactory.GetService<IUserService>();
 

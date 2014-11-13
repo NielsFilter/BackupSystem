@@ -11,6 +11,7 @@
         <ResourceDictionary Source="pack://application:,,,/BackupSystem.Styles.Wpf;component/Styles/Controls.ListView.xaml" />
         <ResourceDictionary Source="pack://application:,,,/BackupSystem.Styles.Wpf;component/Styles/Controls.Buttons.xaml" />
 
+        <ResourceDictionary Source="pack://application:,,,/BackupSystem.Styles.Wpf;component/Styles/Controls.Border.xaml" />
         <ResourceDictionary Source="pack://application:,,,/BackupSystem.Styles.Wpf;component/Styles/Controls.Calendar.xaml" />
         <ResourceDictionary Source="pack://application:,,,/BackupSystem.Styles.Wpf;component/Styles/Controls.CheckBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/BackupSystem.Styles.Wpf;component/Styles/Controls.ComboBox.xaml" />
@@ -40,9 +41,9 @@
     <!-- note: default style for textblock is now in MetroWindow !!! -->
 
     <Style TargetType="ToolTip" BasedOn="{StaticResource MetroToolTip}" />
-    <Style TargetType="Button" BasedOn="{StaticResource MetroButton}" />
+    <Style TargetType="Button" BasedOn="{StaticResource BtnDefault}" />
     <Style TargetType="ToggleButton" BasedOn="{StaticResource MetroToggleButton}" />
-    <Style TargetType="TextBox" BasedOn="{StaticResource MetroTextBox}" />
+    <Style TargetType="TextBox" BasedOn="{StaticResource TxtDefault}" />
     <Style TargetType="RichTextBox" BasedOn="{StaticResource MetroRichTextBox}" />
     <Style TargetType="Slider" BasedOn="{StaticResource MetroSlider}" />
     <Style TargetType="Label" BasedOn="{StaticResource MetroLabel}" />
@@ -51,7 +52,7 @@
     <Style TargetType="ScrollBar" BasedOn="{StaticResource MetroScrollBar}" />
     <Style TargetType="RadioButton" BasedOn="{StaticResource MetroRadioButton}" />
     <Style TargetType="ProgressBar" BasedOn="{StaticResource MetroProgressBar}" />
-    <Style TargetType="PasswordBox" BasedOn="{StaticResource MetroPasswordBox}" />
+    <Style TargetType="PasswordBox" BasedOn="{StaticResource PwdDeafult}" />
     <Style TargetType="CheckBox" BasedOn="{StaticResource MetroCheckBox}" />
     <Style TargetType="ComboBox" BasedOn="{StaticResource MetroComboBox}" />
     <Style TargetType="ComboBoxItem" BasedOn="{StaticResource MetroComboBoxItem}" />

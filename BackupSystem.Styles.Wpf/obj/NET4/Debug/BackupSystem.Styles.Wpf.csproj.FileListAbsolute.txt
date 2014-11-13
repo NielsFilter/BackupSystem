@@ -129,3 +129,10 @@ C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Styles.Wpf\obj\NET4\
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Styles.Wpf\obj\NET4\Debug\BackupSystem.Styles.Wpf.g.resources
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Styles.Wpf\obj\NET4\Debug\BackupSystem.Styles.Wpf.dll
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Styles.Wpf\obj\NET4\Debug\BackupSystem.Styles.Wpf.pdb
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Styles.Wpf\obj\NET4\Debug\Styles\General.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Styles.Wpf\obj\NET4\Debug\Styles\StaticValues.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Styles.Wpf\obj\NET4\Debug\Styles\Vectors.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Styles.Wpf\bin\Debug\BackupSystem.Common.dll
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Styles.Wpf\bin\Debug\BackupSystem.Common.pdb
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Styles.Wpf\obj\NET4\Debug\Styles\Converters.baml
+C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem.Styles.Wpf\obj\NET4\Debug\Styles\Controls.Border.baml

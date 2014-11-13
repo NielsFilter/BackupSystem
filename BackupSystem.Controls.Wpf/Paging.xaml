@@ -17,9 +17,9 @@
             </StackPanel.Resources>
             <Button Style="{DynamicResource BtnFirst}" Command="{Binding Path=Pager.GotoFirstPageCommand}" />
             <Button Style="{DynamicResource BtnPrev}" Command="{Binding Path=Pager.GotoPreviousPageCommand}" />
-            <TextBlock Text="Page" FontFamily="Calibri" FontWeight="Bold" FontSize="26" Foreground="Black" />
-            <TextBlock Text="{Binding Pager.CurrentPage, ValidatesOnExceptions=True}" FontFamily="Calibri" FontWeight="Bold" FontSize="26" Foreground="Black" />
-            <TextBlock Text="{Binding Pager.PageCount, StringFormat=of {0}}" FontFamily="Calibri" FontWeight="Bold" FontSize="26" Foreground="Black" />
+            <TextBlock Text="Page" FontFamily="Calibri" FontWeight="Bold" FontSize="26" Foreground="{DynamicResource TextBrush}" />
+            <TextBlock Text="{Binding Pager.CurrentPage, ValidatesOnExceptions=True}" FontFamily="Calibri" FontWeight="Bold" FontSize="26" Foreground="{DynamicResource TextBrush}" />
+            <TextBlock Text="{Binding Pager.PageCount, StringFormat=of {0}}" FontFamily="Calibri" FontWeight="Bold" FontSize="26" Foreground="{DynamicResource TextBrush}" />
             <Button Style="{DynamicResource BtnNext}" Command="{Binding Pager.GotoNextPageCommand}" />
             <Button Style="{DynamicResource BtnLast}" Command="{Binding Pager.GotoLastPageCommand}" />
         </StackPanel>

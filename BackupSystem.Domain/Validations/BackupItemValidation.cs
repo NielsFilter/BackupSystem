@@ -1,4 +1,5 @@
-﻿using BackupSystem.Domain.IValidations;
+﻿using BackupSystem.DAL;
+using BackupSystem.Domain.IValidations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,31 @@ namespace BackupSystem.Domain.Validations
             : base()
         {
         }
+
+        public bool CanAdd(BackupItem backupItem)
+        {
+            return this.saveValidations(backupItem);
+        }
+
+        public bool CanUpdate(BackupItem backupItem)
+        {
+            return this.saveValidations(backupItem);
+        }
+
+        #region Private Methods
+
+        private bool saveValidations(BackupItem backupItem)
+        {
+            // TODO: Validations
+            return true;
+        }
+
+        public bool CanDelete(BackupItem backupItem)
+        {
+            // TODO: Validations
+            return true;
+        }
+
+        #endregion
     }
 }

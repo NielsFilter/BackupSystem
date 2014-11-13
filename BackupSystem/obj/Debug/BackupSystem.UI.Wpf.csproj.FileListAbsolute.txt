@@ -1,11 +1,4 @@
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\BackupSystem.UI.Wpf.csprojResolveAssemblyReference.cache
-C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDictionaries\ButtonResources.baml
-C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDictionaries\ColourResources.baml
-C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDictionaries\ConverterResources.baml
-C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDictionaries\GeneralResources.baml
-C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDictionaries\StaticValueResources.baml
-C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDictionaries\TextBlockResources.baml
-C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\ResourceDictionaries\VectorResources.baml
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\Backup\BackupItemDetailView.baml
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\Core\HomeView.baml
 C:\Users\nfilter\Documents\GitHub\BackupSystem\BackupSystem\obj\Debug\Views\Core\UserDetailView.baml
